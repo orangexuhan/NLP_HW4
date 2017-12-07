@@ -40,7 +40,7 @@ class Network:
         self.hidden_layer_bias_2 = self.model.add_parameters(properties.hidden_dim_2, init=dynet.ConstInitializer(0.2))
 
         # define the output weight.
-        self.output_layer = self.model.add_parameters((vocab.num_tags(), properties.hidden_dim))
+        self.output_layer = self.model.add_parameters((vocab.num_tags(), properties.hidden_dim_2))
 
         # define the bias vector and initialize it as zero.
         self.output_bias = self.model.add_parameters(vocab.num_tags(), init=dynet.ConstInitializer(0))
