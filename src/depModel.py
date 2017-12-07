@@ -2,6 +2,7 @@ import os,sys
 from optparse import OptionParser
 from decoder import *
 from network import *
+import pickle
 
 
 
