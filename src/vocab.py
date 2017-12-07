@@ -20,25 +20,25 @@ class Vocab:
         for line in words:
             items = line.strip().split(' ')
             word = items[0]
-            id = items[1]
+            id = int(items[1])
             self.word2id_dict[word] = id
             self.id2word_dict[id] = word
         for line in pos:
             items = line.strip().split(' ')
             p = items[0]
-            id = items[1]
+            id = int(items[1])
             self.pos2id_dict[p] = id
             self.id2pos_dict[id] = p
         for line in labels:
             items = line.strip().split(' ')
             label = items[0]
-            id = items[1]
+            id = int(items[1])
             self.label2id_dict[label] = id
             self.id2label_dict[id] = label
         for line in actions:
             items = line.strip().split(' ')
             action = items[0]
-            id = items[1]
+            id = int(items[1])
             self.action2id_dict[action] = id
             self.id2action_dict[id] = action
 
