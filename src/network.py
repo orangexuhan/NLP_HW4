@@ -1,6 +1,6 @@
 import dynet as dynet
 import random
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import numpy as np
 
 class Network:
@@ -74,13 +74,13 @@ class Network:
     def train(self, train_file, epochs):
         # matplotlib config
         loss_values = []
-        plt.ion()
-        ax = plt.gca()
-        ax.set_xlim([0, 10])
-        ax.set_ylim([0, 3])
-        plt.title("Loss over time")
-        plt.xlabel("Minibatch")
-        plt.ylabel("Loss")
+        # plt.ion()
+        # ax = plt.gca()
+        # ax.set_xlim([0, 10])
+        # ax.set_ylim([0, 3])
+        # plt.title("Loss over time")
+        # plt.xlabel("Minibatch")
+        # plt.ylabel("Loss")
 
         for i in range(epochs):
             print 'started epoch', (i+1)
@@ -117,10 +117,10 @@ class Network:
                     # printing info and plotting
                     loss_values.append(minibatch_loss_value)
                     if len(loss_values)%10==0:
-                        ax.set_xlim([0, len(loss_values)+10])
-                        ax.plot(loss_values)
-                        plt.draw()
-                        plt.pause(0.0001)
+                        # ax.set_xlim([0, len(loss_values)+10])
+                        # ax.plot(loss_values)
+                        # plt.draw()
+                        # plt.pause(0.0001)
                         progress = round(100 * float(step) / len(train_data), 2)
                         print 'current minibatch loss', minibatch_loss_value, 'progress:', progress, '%'
 
