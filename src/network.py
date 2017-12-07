@@ -53,7 +53,7 @@ class Network:
 
         # extract word embeddings and tag embeddings from features
         word_embeds = [self.word_embedding[wid] for wid in word_ids]
-        pos_embeds = [self.tag_embedding[tid] for tid in pos_ids]
+        pos_embeds = [self.pos_embedding[tid] for pid in pos_ids]
         label_embeds = [self.label_embedding[lid] for lid in label_ids]
 
         # concatenating all features (recall that '+' for lists is equivalent to appending two lists)
