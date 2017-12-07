@@ -56,7 +56,7 @@ class Vocab:
         return self.label2id[tag]
 
     def word2id(self, word):
-        return self.word2id_dict[word] if word in self.word_dict else self.word_dict['<unk>']
+        return self.word2id_dict[word] if word in self.word2id_dict else self.word2id_dict['<unk>']
 
     def num_words(self):
         return len(self.word2id_dict)
