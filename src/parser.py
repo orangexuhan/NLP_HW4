@@ -23,7 +23,7 @@ if __name__ == '__main__':
     parser.add_option("--minibatch", type="int", dest="minibatch", default=1000)
     parser.add_option("--epochs", type="int", dest="epochs", default=7)
 
-    args = ["--word", "./data/vocabs.word", "--pos", "./data/vocabs.pos", "--label", "./data/vocabs.label", "--action", "./data/vocabs.actions", "--train_data", "./data/train.data", "--model", "./data/model.data", "--vocab", "./data/vocabs.data"]
+    args = ["--word", "data/vocabs.word", "--pos", "data/vocabs.pos", "--label", "data/vocabs.label", "--action", "data/vocabs.actions", "--train_data", "data/train.data", "--model", "data/model.data", "--vocab", "data/vocabs.data"]
 
     (options, args) = parser.parse_args(args)
 
