@@ -17,7 +17,7 @@ class Network:
         # create embeddings for words and tag features.
         self.word_embedding = self.model.add_lookup_parameters((vocab.num_words(), properties.word_embed_dim))
         self.pos_embedding = self.model.add_lookup_parameters((vocab.num_pos_feats(), properties.pos_embed_dim))
-        self.label_embedding = self.model.add_lookup_parameters(vocab.num_label_feats(), properties.label_embed_dim)
+        self.label_embedding = self.model.add_lookup_parameters((vocab.num_label_feats(), properties.label_embed_dim))
 
         # assign transfer function
         self.transfer = dynet.rectify  # can be dynet.logistic or dynet.tanh as well.
