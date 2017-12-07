@@ -50,7 +50,7 @@ class Vocab:
         return self.action2id_dict[tag]
 
     def pos2id(self, tag):
-        return self.pos2id_dict[tag] if word in self.pos2id_dict else self.pos2id_dict['<null>']
+        return self.pos2id_dict[tag] if tag in self.pos2id_dict else self.pos2id_dict['<null>']
 
     def label2id(self, tag):
         return self.label2id_dict[tag]
