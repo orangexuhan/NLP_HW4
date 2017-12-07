@@ -53,7 +53,7 @@ class Vocab:
         return self.pos2id_dict[tag]
 
     def label2id(self, tag):
-        return self.label2id[tag]
+        return self.label2id_dict[tag]
 
     def word2id(self, word):
         return self.word2id_dict[word] if word in self.word2id_dict else self.word2id_dict['<unk>']
