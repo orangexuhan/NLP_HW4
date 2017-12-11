@@ -22,7 +22,7 @@ if __name__ == '__main__':
     parser.add_option("--hidden2", type="int", dest="hidden2", default=200)
     parser.add_option("--minibatch", type="int", dest="minibatch", default=1000)
     parser.add_option("--epochs", type="int", dest="epochs", default=7)
-    parser.add_option("--dropout", type="boolean", dest="dropout", default=True)
+    parser.add_option("--dropout", type="int", dest="dropout", default=1)
 
     args = ["--word", "data/vocabs.word", "--pos", "data/vocabs.pos", "--label", "data/vocabs.labels", "--action", "data/vocabs.actions", "--train_data", "data/train.data", "--model", "data/model.data", "--vocab", "data/vocabs.data"]
 
@@ -41,7 +41,7 @@ if __name__ == '__main__':
         network = Network(vocab, net_properties)
 
         # training
-        network.train(options.train_data_file,options.epochs, options.dropout)
+        network.train(options.train_data_file,options.epochs, bool(options.dropout))
 
         # saving network
         network.save(options.model_path)
