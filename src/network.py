@@ -12,7 +12,7 @@ class Network:
         self.model = dynet.Model()
 
         # assign the algorithm for backpropagation updates.
-        self.updater = dynet.AdamTrainer(self.model)
+        self.updater = dynet.AdagradTrainer(self.model)
 
         # create embeddings for words and tag features.
         self.word_embedding = self.model.add_lookup_parameters((vocab.num_words(), properties.word_embed_dim))
