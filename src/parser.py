@@ -41,6 +41,7 @@ if __name__ == '__main__':
         network = Network(vocab, net_properties)
 
         # training
+        print bool(options.dropout)
         network.train(options.train_data_file,options.epochs, bool(options.dropout))
 
         # saving network
