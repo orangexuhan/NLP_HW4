@@ -21,7 +21,7 @@ if __name__ == '__main__':
     parser.add_option("--hidden1", type="int", dest="hidden1", default=200)
     parser.add_option("--hidden2", type="int", dest="hidden2", default=200)
     parser.add_option("--minibatch", type="int", dest="minibatch", default=1000)
-    parser.add_option("--epochs", type="int", dest="epochs", default=7)
+    parser.add_option("--epochs", type="int", dest="epochs", default=10)
 
     args = ["--word", "data/vocabs.word", "--pos", "data/vocabs.pos", "--label", "data/vocabs.labels", "--action", "data/vocabs.actions", "--train_data", "data/train.data", "--model", "data/model.data", "--vocab", "data/vocabs.data"]
 

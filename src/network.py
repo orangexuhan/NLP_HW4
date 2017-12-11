@@ -63,11 +63,11 @@ class Network:
         # .expr() converts a parameter to a matrix expression in dynet (its a dynet-specific syntax).
         hidden_1 = self.transfer(self.hidden_layer_1.expr() * embedding_layer + self.hidden_layer_bias_1.expr())
 
-        dropout_1 = dynet.dropout(hidden_1, 0.5)
+        dropout_1 = dynet.dropout(hidden_1, 0.8)
 
         hidden_2 = self.transfer(self.hidden_layer_2.expr() * dropout_1 + self.hidden_layer_bias_2.expr())
 
-        dropout_2 = dynet.dropout(hidden_2, 0.5)
+        dropout_2 = dynet.dropout(hidden_2, 0.8)
 
         # calculating the output layer
         output = self.output_layer.expr() * dropout_2 + self.output_bias.expr()
