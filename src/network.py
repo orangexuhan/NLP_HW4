@@ -31,13 +31,13 @@ class Network:
         self.hidden_layer_1 = self.model.add_parameters((properties.hidden_dim_1, self.input_dim))
 
         # define the hidden layer bias term and initialize it as constant 0.2.
-        self.hidden_layer_bias_1 = self.model.add_parameters(properties.hidden_dim_1, init=dynet.ConstInitializer(0.2))
+        self.hidden_layer_bias_1 = self.model.add_parameters(properties.hidden_dim_1)
 
         # define the hidden layer.
         self.hidden_layer_2 = self.model.add_parameters((properties.hidden_dim_2, properties.hidden_dim_1))
 
         # define the hidden layer bias term and initialize it as constant 0.2.
-        self.hidden_layer_bias_2 = self.model.add_parameters(properties.hidden_dim_2, init=dynet.ConstInitializer(0.2))
+        self.hidden_layer_bias_2 = self.model.add_parameters(properties.hidden_dim_2)
 
         # define the output weight.
         self.output_layer = self.model.add_parameters((vocab.num_tags(), properties.hidden_dim_2))

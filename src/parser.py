@@ -18,8 +18,8 @@ if __name__ == '__main__':
     parser.add_option("--we", type="int", dest="we", default=64)
     parser.add_option("--pe", type="int", dest="pe", default=32)
     parser.add_option("--le", type="int", dest="le", default=32)
-    parser.add_option("--hidden1", type="int", dest="hidden1", default=400)
-    parser.add_option("--hidden2", type="int", dest="hidden2", default=400)
+    parser.add_option("--hidden1", type="int", dest="hidden1", default=200)
+    parser.add_option("--hidden2", type="int", dest="hidden2", default=200)
     parser.add_option("--minibatch", type="int", dest="minibatch", default=1000)
     parser.add_option("--epochs", type="int", dest="epochs", default=7)
 
