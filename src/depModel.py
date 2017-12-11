@@ -33,7 +33,7 @@ class DepModel:
         :return: list of scores
         '''
         # change this part of the code.
-        return self.model.build_graph(str_features).value()
+        return self.model.build_graph(str_features, False).value()
 
 if __name__=='__main__':
     parser = OptionParser()

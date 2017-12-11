@@ -45,7 +45,7 @@ class Network:
         # define the bias vector and initialize it as zero.
         self.output_bias = self.model.add_parameters(vocab.num_tags(), init=dynet.ConstInitializer(0))
 
-    def build_graph(self, features):
+    def build_graph(self, features, use_dropout=True):
         # extract word and tags ids
         word_ids = [self.vocab.word2id(word_feat) for word_feat in features[0:20]]
         pos_ids = [self.vocab.pos2id(pos_feat) for pos_feat in features[20:40]]
@@ -63,11 +63,17 @@ class Network:
         # .expr() converts a parameter to a matrix expression in dynet (its a dynet-specific syntax).
         hidden_1 = self.transfer(self.hidden_layer_1.expr() * embedding_layer + self.hidden_layer_bias_1.expr())
 
-        dropout_1 = dynet.dropout(hidden_1, 0.5)
+        if use_dropout:
+            dropout_1 = dynet.dropout(hidden_1, 0.5)
+        else:
+            dropout_1 = hidden_1
 
         hidden_2 = self.transfer(self.hidden_layer_2.expr() * dropout_1 + self.hidden_layer_bias_2.expr())
 
-        # dropout_2 = dynet.dropout(hidden_2, 0.8)
+        if use_dropout:
+            dropout_2 = dynet.dropout(hidden_2, 0.5)
+        else:
+            dropout_2 = hidden_2
 
         # calculating the output layer
         output = self.output_layer.expr() * hidden_2 + self.output_bias.expr()
