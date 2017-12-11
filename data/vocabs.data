@@ -24990,10 +24990,10 @@ p5006
 (dp5007
 S'label_embed_dim'
 p5008
-I32
+I64
 sS'pos_embed_dim'
 p5009
-I32
+I64
 sS'word_embed_dim'
 p5010
 I64
