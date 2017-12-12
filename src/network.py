@@ -81,7 +81,7 @@ class Network:
         # return the output as a dynet vector (expression)
         return output
 
-    def train(self, train_file, epochs, use_dropout):
+    def train(self, train_file, epochs):
         # matplotlib config
         loss_values = []
         # plt.ion()
@@ -105,7 +105,7 @@ class Network:
                 fields = line.strip().split(' ')
                 features, label = fields[:-1], fields[-1]
                 gold_label = self.vocab.tag2id(label)
-                result = self.build_graph(features, use_dropout)
+                result = self.build_graph(features)
 
                 # getting loss with respect to negative log softmax function and the gold label.
                 loss = dynet.pickneglogsoftmax(result, gold_label)
